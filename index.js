@@ -57,6 +57,32 @@ app.post('/claim', async (req,res) => {
   }
 });
 
+app.get('/supply', async (req, res) => {
+  try {
+    const result = await User.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalTokens: { $sum: '$tokens' }
+        }
+      }
+    ]);
+
+    if (result.length > 0) {
+      console.log('Total tokens mined by all users:', result[0].totalTokens);
+      res.json({ totalTokens: result[0].totalTokens });
+    } else {
+      res.json({ totalTokens: 0 });
+    }
+  } catch (error) {
+    console.error('Error fetching total tokens:', error);
+    res.status(500).json({ error: 'An error occurred while fetching the total tokens' });
+    console.log("hii")
+  }
+});
+
+
+
 // app.post('/login', async (req,res) => {
 //   const {username,password} = req.body;
 //   const userDoc = await User.findOne({username});
