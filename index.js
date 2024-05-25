@@ -248,7 +248,7 @@ bot.on('callback_query', (query) => {
   const username = query.from.username;
 
   if (query.data === 'play') {
-    const webAppUrl = `https://t.me/duangkittybot/DuangKitty?userId=${userId}`;
+    const webAppUrl = `https://t.me/duangkittybot/duangkitty?userId=${userId}`;
     const playMessage = `Hey ${username}, click the link below to play the game:\n${webAppUrl}`;
 
     bot.sendMessage(chatId, playMessage);
