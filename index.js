@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 // app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://pavan147:pavan123@cluster0.xaedvyt.mongodb.net/',{
+mongoose.connect('mongodb+srv://niubiduang:4Iv46C9SCiI5KPuR@cluster0.d0eaxy7.mongodb.net/',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>
@@ -181,7 +181,7 @@ app.post('/claim', async (req,res) => {
 
 const TelegramBot = require('node-telegram-bot-api');
 const { hostname } = require('os');
-const token = '7041763974:AAHRVMVsFza1HneXfKDifYY2or2ydoX93S8';
+const token = '6820674346:AAGXI04qSIvcqeCr_6coRs_rO7tBt1vya48';
 const bot = new TelegramBot(token, {polling: true});
 
 bot.on('message', (msg) => {
@@ -222,7 +222,7 @@ bot.on('callback_query', (query) => {
   const username = query.from.username;
 
   if (query.data === 'play') {
-    const webAppUrl = `https://t.me/LeafMineBot/LeafMine?userId=${userId}`;
+    const webAppUrl = `https://t.me/DuangKittyBot/DuangKitty?userId=${userId}`;
     const playMessage = `Hey ${username}, click the link below to play the game:\n${webAppUrl}`;
 
     bot.sendMessage(chatId, playMessage);
