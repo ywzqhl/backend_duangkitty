@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 // app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://niubiduang:4Iv46C9SCiI5KPuR@cluster0.d0eaxy7.mongodb.net/',{
+mongoose.connect('mongodb+srv://niubiduang:4Iv46C9SCiI5KPuR@cluster0.d0eaxy7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>
